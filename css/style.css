@@ -31,6 +31,7 @@ footer{
 }
 header p {
     font-size: 2.2em;
+    text-align: center;
 }
 .container-width{
     width: 60%;
@@ -102,4 +103,17 @@ header p {
 }
 .calc-buttons button:hover{
     background-color: var(--hover);
+}
+.clear-button{
+    background-color: var(--background);
+    line-height: 100%;
+    border: none;
+    color: var(--operator);
+    border-radius: 25%;
+    font-size: 2em;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.clear-button:active{
+    box-shadow: -4px 4px 14px -3px rgba(0,0,0,0.75);
 }

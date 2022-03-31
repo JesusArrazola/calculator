@@ -1,0 +1,23 @@
+:root{
+    --background: #356A7A;
+    --operator: #6BD9FA;
+    --main: #56ACC7;
+    --hover: #B7EBFB;
+    --text: #59737A;
+    --text-contrast: #ffffff;
+}
+body{
+    background-color: var(--background);
+    display: flex;
+    font-family: 'Inter', sans-serif;
+    flex-flow: column;
+    height: 100vh;
+    margin: 0;
+}
+.container-width{
+    width: 60%;
+    margin: 0 auto;
+}
+.calc-container{
+    flex: 1;
+}

@@ -10,7 +10,7 @@
     box-sizing: border-box;
 }
 .debug{
-    border: none;
+    border: 1px solid white;
 }
 body{
     background-color: var(--background);
@@ -55,11 +55,15 @@ header p {
 }
 .display{
     height: 90px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 50px;
 }
 .display input{
-    width: 87%;
+    width: 75%;
     height: 100%;
-    margin: 0 auto;
     border: none;
     background-color: var(--background);
     padding: 0;

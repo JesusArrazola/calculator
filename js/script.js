@@ -8,6 +8,11 @@ let btnPeriod = document.querySelector('button.operator#period');
 let display = txtDisplay.value;
 
 //Display functions
+/**
+ * Rewrites the displayed value and updates the variable that holds it.
+ * @param {String} mode Write mode
+ * @param {String} text Text to write
+ */
 const displayWrite = (mode,text)=>{
     switch(mode){
         case "concatenate":

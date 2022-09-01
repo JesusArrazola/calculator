@@ -1,5 +1,6 @@
 //properties
 let memory = [];
+let current_op = null;
 //Objects
 let txtDisplay = document.querySelector('input#txtDisplay');
 let btnNumbers = document.querySelectorAll('button.number');
@@ -8,6 +9,21 @@ let btnEquals = document.querySelectorAll('.equals')[0];
 let btnClear = document.querySelector('button.clear-button');
 let btnPeriod = document.querySelector('button.operator.period');
 let display = txtDisplay.value;
+
+/* Misc functions */
+const setCurrent_op = (e)=>{
+    if(current_op !== null){
+        current_op.classList.remove('current-op');
+        current_op = e;
+        current_op.classList.add('current-op');
+    }else if(current_op === undefined){
+        current_op.classList.remove('current-op');
+        current_op = null;
+    }else{
+        current_op = e;
+        current_op.classList.add('current-op');
+    }
+}
 
 /* Start of display functions */
 /**
@@ -44,6 +60,10 @@ btnNumbers.forEach(e=>{
 btnClear.addEventListener('click',()=>{
     displayWrite('rewrite','0');
     memory = [];
+    if(current_op !== null){
+        current_op.classList.remove('current-op');
+        current_op = null;
+    }
 });
 
 btnPeriod.addEventListener('click',()=>{
@@ -58,6 +78,7 @@ btnPeriod.addEventListener('click',()=>{
 btnOperators.forEach(e => {
     e.addEventListener('click', evt =>{
         //Checar que la memoria esté vacía
+        setCurrent_op(evt.currentTarget);
         if(memory.length === 0){
             memory[0] = display;
         }else{
@@ -75,6 +96,10 @@ btnEquals.addEventListener('click',e => {
     }else{
         displayWrite('rewrite',operate(memory[1],parseFloat(memory[0]),parseFloat(display)).toString());
         memory = [];
+    }
+    if(current_op !== null){
+        current_op.classList.remove('current-op');
+        current_op = null;
     }
 });
 

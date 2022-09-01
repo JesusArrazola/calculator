@@ -5,6 +5,7 @@
     --hover: #B7EBFB;
     --text: #59737A;
     --text-contrast: #ffffff;
+    --current-op:#89ff89;
 }
 *,*::after,*::before{
     box-sizing: border-box;
@@ -119,4 +120,7 @@ header p {
 }
 .operator[id] i{
     pointer-events: none;
+}
+.operator.current-op{
+    border: 5px solid var(--current-op);
 }

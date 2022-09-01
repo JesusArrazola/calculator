@@ -117,3 +117,6 @@ header p {
 .clear-button:active{
     box-shadow: -4px 4px 14px -3px rgba(0,0,0,0.75);
 }
+.operator[id] i{
+    pointer-events: none;
+}
